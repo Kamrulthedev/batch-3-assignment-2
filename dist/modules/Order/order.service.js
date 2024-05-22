@@ -20,8 +20,7 @@ const getallOrder = () => __awaiter(void 0, void 0, void 0, function* () {
     return result;
 });
 const getOrderByEmail = (email) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield order_shema_1.Order.find({ email });
-    return result;
+    return yield order_shema_1.Order.find({ email });
 });
 exports.OrderService = {
     createOrder,

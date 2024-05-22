@@ -11,9 +11,8 @@ const getallOrder = async () => {
   return result;
 };
 
-const getOrderByEmail = async(email:string)=>{
-    const result = await Order.find({email})
-    return result
+const getOrderByEmail = async (email: string): Promise<EOrder[]> => {
+  return await Order.find({ email });
 };
 
 export const OrderService = {
