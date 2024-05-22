@@ -46,7 +46,7 @@ const getAllProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
 });
-const getASingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getASingleProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productId = req.params.productId;
         const result = yield product_service_1.ProductService.getSingleProduct(productId);
@@ -72,8 +72,36 @@ const getASingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, functi
         });
     }
 });
+const updateProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const productId = req.params.productId;
+        const productData = req.body;
+        const result = yield product_service_1.ProductService.updateProduct(productId, productData);
+        if (result) {
+            res.status(200).json({
+                success: true,
+                message: "Product updated successfully!",
+                data: result,
+            });
+        }
+        else {
+            res.status(404).json({
+                success: false,
+                message: "Product not found",
+            });
+        }
+    }
+    catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong while updating the product",
+            error: err.message,
+        });
+    }
+});
 exports.ProductControllar = {
     createProductDb,
     getAllProductDb,
-    getASingleProduct
+    getASingleProductDb,
+    updateProductDb
 };
