@@ -68,7 +68,7 @@ Create a Product
 
 
 
- 2Get All Products
+ 2 Get All Products
  . Endpoint: `/api/products`
  . Method: `GET`
 
@@ -88,6 +88,35 @@ Create a Product
 . Method: `DELETE`
 
 
+5. Search Products
 
+. Endpoint: `/api/products/search?Term=searchTerm`
+. Method: `GET`
+
+
+
+2.Orders
+
+1 Create an Order
+  . Endpoint: /api/orders
+  . Method: POST
+  . Request Body:
+                {
+               "email": "kmc@example.com",
+               "productId": "productId",
+               "price": 100,
+               "quantity": 2
+           }
+
+2. Get All Orders
+. Endpoint: /api/orders
+. Method: GET
+
+. Get Orders by Email
+3.Endpoint: /api/orders?email=user@example.com
+. Method: GET
+
+
+Lat`s Gooooooooooooooooooooo
 
 
