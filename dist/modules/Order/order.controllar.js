@@ -18,17 +18,60 @@ const createOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.status(200).json({
             success: true,
             message: "Your Order Created Successfully",
-            data: result
+            data: result,
         });
     }
     catch (err) {
         res.status(400).json({
             success: false,
             message: "This Order Not Create",
-            error: err
+            error: err,
+        });
+    }
+});
+const getallOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const result = yield order_service_1.OrderService.getallOrder();
+        res.status(200).json({
+            success: true,
+            message: "Orders fetched successfully!",
+            data: result,
+        });
+    }
+    catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "You are Worng data",
+            error: err,
+        });
+    }
+});
+const getOrderByEmailDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const emailData = req.query.email;
+        if (!emailData) {
+            return res.status(400).json({
+                success: false,
+                message: 'Email query parameter is required',
+            });
+        }
+        const result = yield order_service_1.OrderService.getOrderByEmail(emailData);
+        res.status(200).json({
+            success: true,
+            message: "Orders fetched successfully for user email!",
+            data: result
+        });
+    }
+    catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Orders Fetched UnSuccessfully for user Email",
+            data: err
         });
     }
 });
 exports.OrderControllar = {
-    createOrderDb
+    createOrderDb,
+    getallOrderDb,
+    getOrderByEmailDb
 };

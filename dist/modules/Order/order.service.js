@@ -15,6 +15,16 @@ const createOrder = (orderData) => __awaiter(void 0, void 0, void 0, function* (
     const result = new order_shema_1.Order(orderData);
     return yield result.save();
 });
+const getallOrder = () => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield order_shema_1.Order.find();
+    return result;
+});
+const getOrderByEmail = (email) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield order_shema_1.Order.find({ email });
+    return result;
+});
 exports.OrderService = {
-    createOrder
+    createOrder,
+    getallOrder,
+    getOrderByEmail
 };
