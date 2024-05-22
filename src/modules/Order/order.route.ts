@@ -1,5 +1,7 @@
 import express from "express";
 import { OrderControllar } from "./order.controllar";
+import { validate } from "../Validation/validate";
+import { orderSchema } from "../Validation/order.validation";
 
 
 
@@ -7,7 +9,7 @@ import { OrderControllar } from "./order.controllar";
 const router = express.Router();
 
 //create a order
-router.post("/", OrderControllar.createOrderDb);
+router.post("/",validate(orderSchema), OrderControllar.createOrderDb);
 
 // //getOrdersByEmail
 // router.get("/", OrderControllar.getOrderByEmailDb); 
