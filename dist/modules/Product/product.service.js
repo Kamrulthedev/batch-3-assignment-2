@@ -24,14 +24,17 @@ const getSingleProduct = (id) => __awaiter(void 0, void 0, void 0, function* () 
     return result;
 });
 const updateProduct = (id, productData) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(id);
     const result = yield product_model_1.Product.findByIdAndUpdate(id, productData, { new: true });
-    console.log(result);
     return result;
+});
+const deleteProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.findByIdAndDelete(id);
+    return !!result;
 });
 exports.ProductService = {
     createProduct,
     getAllProduct,
     getSingleProduct,
-    updateProduct
+    updateProduct,
+    deleteProduct
 };
