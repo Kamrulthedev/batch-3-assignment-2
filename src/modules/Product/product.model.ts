@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 import { EProduct } from "./product.interface";
-import { model, connect } from "mongoose";
+import { model } from "mongoose";
 
 const variantSchema = new Schema({
   type: {

@@ -1,4 +1,4 @@
-import mongoose, { Schema, model, connect, Types } from "mongoose";
+import  { Types } from "mongoose";
 
 
 //create a interface
