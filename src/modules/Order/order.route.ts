@@ -9,8 +9,8 @@ const router = express.Router();
 //create a order
 router.post("/", OrderControllar.createOrderDb);
 
-//getOrdersByEmail
-router.get("/", OrderControllar.getOrderByEmailDb); 
+// //getOrdersByEmail
+// router.get("/", OrderControllar.getOrderByEmailDb); 
 
 //get all order
 router.get("/", OrderControllar.getallOrderDb);

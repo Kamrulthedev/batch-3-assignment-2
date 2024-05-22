@@ -30,58 +30,39 @@ const createOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
 });
-//get by all Orders
-const getallOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const result = yield order_service_1.OrderService.getallOrder();
-        res.status(200).json({
-            success: true,
-            message: "Orders fetched successfully!",
-            data: result,
-        });
-    }
-    catch (err) {
-        res.status(500).json({
-            success: false,
-            message: "You are Worng data",
-            error: err,
-        });
-    }
-});
-//get Order by email 
-// const getOrderByEmailDb = async(req:Request, res:Response)=>{
-//   try{
-//     const emailData = req.query.email as string
-//      if(!emailData){
-//   return res.status(400).json({
-//     success: false,
-//     message: 'not found your email!!',
-// });
-//  }
-//  const result = await OrderService.getOrderByEmail(emailData);
-//  res.status(200).json({
-//   success:true,
-//   message:"Orders get by email in the successfully.",
-//   data:result
-//  })
-//   }catch(err:any){
+// //get by all Orders
+// const getallOrderDb = async (req: Request, res: Response) => {
+//   try {
+//     const result = await OrderService.getallOrder();
+//     res.status(200).json({
+//       success: true,
+//       message: "Orders fetched successfully!",
+//       data: result,
+//     });
+//   } catch (err: any) {
 //     res.status(500).json({
-//       success:false,
-//       message:"Orders Fetched UnSuccessfully",
-//       data:err
-//     })
+//       success: false,
+//       message: "You are Worng data",
+//       error: err,
+//     });
 //   }
 // };
-const getOrderByEmailDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getallOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const email = req.query.email;
-        if (!email) {
-            return res.status(400).json({
-                success: false,
-                message: "Email query parameter is required",
-            });
+        let result;
+        if (email) {
+            result = yield order_service_1.OrderService.getOrderByEmail(email);
+            if (!result.length) {
+                return res.status(404).json({
+                    success: false,
+                    message: "No orders found for the specified email",
+                });
+            }
         }
-        const result = yield order_service_1.OrderService.getOrderByEmail(email);
+        else {
+            result = yield order_service_1.OrderService.getallOrder();
+        }
         res.status(200).json({
             success: true,
             message: "Orders fetched successfully!",
@@ -96,8 +77,30 @@ const getOrderByEmailDb = (req, res) => __awaiter(void 0, void 0, void 0, functi
         });
     }
 });
+// const getOrderByEmailDb = async (req: Request, res: Response) => {
+//   try {
+//       const email = req.query.email as string;
+//       if (!email) {
+//           return res.status(400).json({
+//               success: false,
+//               message: "Email query parameter is required",
+//           });
+//       }
+//       const result = await OrderService.getOrderByEmail(email);
+//       res.status(200).json({
+//           success: true,
+//           message: "Orders fetched successfully!",
+//           data: result,
+//       });
+//   } catch (error: any) {
+//       res.status(500).json({
+//           success: false,
+//           message: "Something went wrong while fetching orders",
+//           error: error.message,
+//       });
+//   }
+// };
 exports.OrderControllar = {
     createOrderDb,
-    getallOrderDb,
-    getOrderByEmailDb
+    getallOrderDb
 };
