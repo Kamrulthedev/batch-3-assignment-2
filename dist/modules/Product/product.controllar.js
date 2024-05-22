@@ -101,10 +101,29 @@ const deleteProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
 });
+const searchProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const searchTerm = req.query.Term;
+        const result = yield product_service_1.ProductService.searchProduct(searchTerm);
+        res.status(200).json({
+            success: true,
+            message: `Products matching search term '${searchTerm}' fetched successfully!`,
+            data: result,
+        });
+    }
+    catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Something was wrong",
+            error: err.message,
+        });
+    }
+});
 exports.ProductControllar = {
     createProductDb,
     getAllProductDb,
     getASingleProductDb,
     updateProductDb,
-    deleteProductDb
+    deleteProductDb,
+    searchProductDb
 };

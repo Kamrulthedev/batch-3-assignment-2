@@ -9,6 +9,8 @@ const product_controllar_1 = require("./product.controllar");
 const router = express_1.default.Router();
 router.post('/', product_controllar_1.ProductControllar.createProductDb);
 router.get('/', product_controllar_1.ProductControllar.getAllProductDb);
+// **6. Search a product**?
+router.get('/search', product_controllar_1.ProductControllar.searchProductDb);
 router.get('/:productId', product_controllar_1.ProductControllar.getASingleProductDb);
 router.put('/:productId', product_controllar_1.ProductControllar.updateProductDb);
 router.delete('/:productId', product_controllar_1.ProductControllar.deleteProductDb);

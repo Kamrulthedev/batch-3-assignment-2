@@ -88,11 +88,31 @@ const deleteProductDb = async (req: Request, res: Response)=> {
         });
     }
 };
+const searchProductDb = async (req: Request, res: Response) => {
+    try {
+        const searchTerm = req.query.Term as string;
+        const result = await ProductService.searchProduct(searchTerm);
+        res.status(200).json({
+            success: true,
+            message: `Products matching search term '${searchTerm}' fetched successfully!`,
+            data: result,
+        });
+    } catch (err: any) {
+        res.status(500).json({
+            success: false,
+            message: "Something was wrong",
+            error: err.message,
+        });
+    }
+};
+
+
 
 export const ProductControllar = {
     createProductDb,
     getAllProductDb,
     getASingleProductDb,
     updateProductDb,
-    deleteProductDb
+    deleteProductDb,
+    searchProductDb
 };

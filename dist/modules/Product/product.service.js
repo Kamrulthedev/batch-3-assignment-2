@@ -24,17 +24,30 @@ const getSingleProduct = (id) => __awaiter(void 0, void 0, void 0, function* () 
     return result;
 });
 const updateProduct = (id, productData) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield product_model_1.Product.findByIdAndUpdate(id, productData, { new: true });
+    const result = yield product_model_1.Product.findByIdAndUpdate(id, productData, {
+        new: true,
+    });
     return result;
 });
 const deleteProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.findByIdAndDelete(id);
-    return !!result;
+    return result;
+});
+const searchProduct = (Term) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.find({
+        $or: [
+            { name: { $regex: Term, $options: "i" } },
+            { description: { $regex: Term, $options: "i" } },
+            { tags: { $regex: Term, $options: "i" } },
+        ],
+    });
+    return result;
 });
 exports.ProductService = {
     createProduct,
     getAllProduct,
     getSingleProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    searchProduct,
 };
