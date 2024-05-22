@@ -9,11 +9,13 @@ const router = express.Router();
 //create a order
 router.post("/", OrderControllar.createOrderDb);
 
+//getOrdersByEmail
+router.get("/", OrderControllar.getOrderByEmailDb); 
+
 //get all order
 router.get("/", OrderControllar.getallOrderDb);
 
-//getOrdersByEmail
-router.get("/", OrderControllar.getOrderByEmailDb); 
+
 
 
 export const OrderRouter = router;
