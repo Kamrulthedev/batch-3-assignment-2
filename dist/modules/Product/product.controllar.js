@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductControllar = void 0;
 const product_service_1 = require("./product.service");
+//create Product
 const createProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productData = req.body;
@@ -29,6 +30,7 @@ const createProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
 });
+//get all Products
 const getAllProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const result = yield product_service_1.ProductService.getAllProduct();
@@ -46,6 +48,7 @@ const getAllProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
 });
+//get A Single Product
 const getASingleProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productId = req.params.productId;
@@ -64,6 +67,7 @@ const getASingleProductDb = (req, res) => __awaiter(void 0, void 0, void 0, func
         });
     }
 });
+//Update a Product
 const updateProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productId = req.params.productId;
@@ -83,6 +87,7 @@ const updateProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
 });
+//Delete A Product
 const deleteProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productId = req.params.productId;
@@ -101,6 +106,7 @@ const deleteProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
 });
+//Search A Product
 const searchProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const searchTerm = req.query.Term;
@@ -119,6 +125,7 @@ const searchProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
 });
+//export all functionality
 exports.ProductControllar = {
     createProductDb,
     getAllProductDb,

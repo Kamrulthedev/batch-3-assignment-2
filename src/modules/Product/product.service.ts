@@ -1,21 +1,25 @@
 import { EProduct } from "./product.interface";
 import { Product } from "./product.model";
 
+//create Porduct
 const createProduct = async (Prodectdata: EProduct) => {
   const result = await Product.create(Prodectdata);
   return result;
 };
 
+//get all Product
 const getAllProduct = async () => {
   const result = await Product.find();
   return result;
 };
 
+//get a Single Product
 const getSingleProduct = async (id: string) => {
   const result = await Product.findById(id);
   return result;
 };
 
+//Update A Product
 const updateProduct = async (id: string, productData: Partial<EProduct>) => {
   const result = await Product.findByIdAndUpdate(id, productData, {
     new: true,
@@ -23,11 +27,13 @@ const updateProduct = async (id: string, productData: Partial<EProduct>) => {
   return result;
 };
 
+//Delete A Product
 const deleteProduct = async (id: string) => {
   const result = await Product.findByIdAndDelete(id);
   return result;
 };
 
+//Searc A Product
 const searchProduct = async (Term: string) => {
   const result = await Product.find({
     $or: [
@@ -39,6 +45,7 @@ const searchProduct = async (Term: string) => {
   return result;
 };
 
+//export all function
 export const ProductService = {
   createProduct,
   getAllProduct,

@@ -11,28 +11,34 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductService = void 0;
 const product_model_1 = require("./product.model");
+//create Porduct
 const createProduct = (Prodectdata) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.create(Prodectdata);
     return result;
 });
+//get all Product
 const getAllProduct = () => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.find();
     return result;
 });
+//get a Single Product
 const getSingleProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.findById(id);
     return result;
 });
+//Update A Product
 const updateProduct = (id, productData) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.findByIdAndUpdate(id, productData, {
         new: true,
     });
     return result;
 });
+//Delete A Product
 const deleteProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.findByIdAndDelete(id);
     return result;
 });
+//Searc A Product
 const searchProduct = (Term) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.find({
         $or: [
@@ -43,6 +49,7 @@ const searchProduct = (Term) => __awaiter(void 0, void 0, void 0, function* () {
     });
     return result;
 });
+//export all function
 exports.ProductService = {
     createProduct,
     getAllProduct,

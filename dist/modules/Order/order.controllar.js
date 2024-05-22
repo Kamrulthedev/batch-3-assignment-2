@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderControllar = void 0;
 const order_service_1 = require("./order.service");
+//create order
 const createOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const Orderdata = req.body;
@@ -29,6 +30,7 @@ const createOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
 });
+//get by all Orders
 const getallOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const result = yield order_service_1.OrderService.getallOrder();
@@ -46,6 +48,7 @@ const getallOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
 });
+//get Order by email 
 const getOrderByEmailDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const emailData = req.query.email;

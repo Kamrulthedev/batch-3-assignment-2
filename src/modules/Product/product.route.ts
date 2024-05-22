@@ -6,6 +6,7 @@ const router = express.Router();
 router.post('/products' , ProductControllar.createProductDb);
 
 router.get('/products', ProductControllar.getAllProductDb);
+
 // **6. Search a product**?
 router.get('/products/search', ProductControllar.searchProductDb);
 

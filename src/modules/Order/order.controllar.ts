@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { OrderService } from "./order.service";
 
+
+//create order
 const createOrderDb = async (req: Request, res: Response) => {
   try {
     const Orderdata = req.body;
@@ -18,7 +20,7 @@ const createOrderDb = async (req: Request, res: Response) => {
     });
   }
 };
-
+//get by all Orders
 const getallOrderDb = async (req: Request, res: Response) => {
   try {
     const result = await OrderService.getallOrder();
@@ -36,6 +38,8 @@ const getallOrderDb = async (req: Request, res: Response) => {
   }
 };
 
+
+//get Order by email 
 const getOrderByEmailDb = async(req:Request, res:Response)=>{
   try{
     const emailData = req.query.email as string
@@ -58,7 +62,7 @@ const getOrderByEmailDb = async(req:Request, res:Response)=>{
       data:err
     })
   }
-}
+};
 
 
 export const OrderControllar = {

@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import { ProductService } from './product.service';
 
+
+//create Product
 const createProductDb = async (req: Request, res: Response)=> {
     try {
         const productData = req.body;
@@ -18,6 +20,8 @@ const createProductDb = async (req: Request, res: Response)=> {
         });
     }
 };
+
+//get all Products
 const getAllProductDb = async (req:Request, res:Response)=>{
     try{
         const result = await ProductService.getAllProduct();
@@ -35,6 +39,7 @@ const getAllProductDb = async (req:Request, res:Response)=>{
     }
 };
 
+//get A Single Product
 const getASingleProductDb = async (req: Request, res: Response) => {
     try {
         const productId = req.params.productId;
@@ -53,6 +58,7 @@ const getASingleProductDb = async (req: Request, res: Response) => {
     }
 };
 
+//Update a Product
 const updateProductDb = async (req: Request, res: Response) => {
     try {
         const productId = req.params.productId;
@@ -71,6 +77,8 @@ const updateProductDb = async (req: Request, res: Response) => {
         });
     }
 };
+
+//Delete A Product
 const deleteProductDb = async (req: Request, res: Response)=> {
     try {
         const productId = req.params.productId;
@@ -88,6 +96,8 @@ const deleteProductDb = async (req: Request, res: Response)=> {
         });
     }
 };
+
+//Search A Product
 const searchProductDb = async (req: Request, res: Response) => {
     try {
         const searchTerm = req.query.Term as string;
@@ -107,7 +117,7 @@ const searchProductDb = async (req: Request, res: Response) => {
 };
 
 
-
+//export all functionality
 export const ProductControllar = {
     createProductDb,
     getAllProductDb,
