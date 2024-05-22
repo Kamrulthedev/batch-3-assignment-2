@@ -12,8 +12,8 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(body_parser_1.default.json());
-app.use('/api/products', product_route_1.ProductRouter);
-app.use('/api/orders', order_route_1.OrderRouter);
+app.use("/api/products", product_route_1.ProductRouter);
+app.use("/api/orders", order_route_1.OrderRouter);
 app.get("/", (req, res) => {
     res.send("Hello Prodects!");
 });

@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { OrderService } from "./order.service";
 
-
 //create order
 const createOrderDb = async (req: Request, res: Response) => {
   try {
@@ -41,34 +40,33 @@ const createOrderDb = async (req: Request, res: Response) => {
 
 const getallOrderDb = async (req: Request, res: Response) => {
   try {
-      const email = req.query.email as string | undefined;
-      let result;
-      if (email) {
-          result = await OrderService.getOrderByEmail(email);
-          if (!result.length) {
-              return res.status(404).json({
-                  success: false,
-                  message: "No orders found for the specified email",
-              });
-          }
-      } else {
-          result = await OrderService.getallOrder();
-      }
-
-      res.status(200).json({
-          success: true,
-          message: "Orders fetched successfully!",
-          data: result,
-      });
-  } catch (error: any) {
-      res.status(500).json({
+    const email = req.query.email as string | undefined;
+    let result;
+    if (email) {
+      result = await OrderService.getOrderByEmail(email);
+      if (!result.length) {
+        return res.status(404).json({
           success: false,
-          message: "Something went wrong while fetching orders",
-          error: error.message,
-      });
+          message: "No orders found for the specified email",
+        });
+      }
+    } else {
+      result = await OrderService.getallOrder();
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Orders fetched successfully!",
+      data: result,
+    });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong while fetching orders",
+      error: error.message,
+    });
   }
 };
-
 
 // const getOrderByEmailDb = async (req: Request, res: Response) => {
 //   try {
@@ -94,8 +92,7 @@ const getallOrderDb = async (req: Request, res: Response) => {
 //   }
 // };
 
-
 export const OrderControllar = {
   createOrderDb,
-  getallOrderDb
+  getallOrderDb,
 };

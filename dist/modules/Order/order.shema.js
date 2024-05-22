@@ -33,4 +33,4 @@ exports.EOrderSchema = new mongoose_1.Schema({
     quantity: { type: Number, required: true },
 });
 //create a model
-exports.Order = mongoose_1.default.model('Order', exports.EOrderSchema);
+exports.Order = mongoose_1.default.model("Order", exports.EOrderSchema);

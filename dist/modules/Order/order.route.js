@@ -12,7 +12,7 @@ const router = express_1.default.Router();
 //create a order
 router.post("/", (0, validate_1.validate)(order_validation_1.orderSchema), order_controllar_1.OrderControllar.createOrderDb);
 // //getOrdersByEmail
-// router.get("/", OrderControllar.getOrderByEmailDb); 
+// router.get("/", OrderControllar.getOrderByEmailDb);
 //get all order
 router.get("/", order_controllar_1.OrderControllar.getallOrderDb);
 exports.OrderRouter = router;

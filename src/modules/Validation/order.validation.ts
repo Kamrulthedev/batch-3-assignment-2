@@ -1,11 +1,11 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const orderSchema = z.object({
-    email: z
+  email: z
     .string()
     .email({ message: "Invalid email format" })
     .min(1, { message: "Email is required" }),
-    productId: z.string(),
-    price: z.number({message:"Please type in the Number Price"}),
-    quantity: z.number()
+  productId: z.string(),
+  price: z.number({ message: "Please type in the Number Price" }),
+  quantity: z.number(),
 });

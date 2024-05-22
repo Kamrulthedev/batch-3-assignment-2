@@ -95,7 +95,7 @@ const deleteProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         res.status(200).json({
             success: true,
             message: "A Product deleted successfully!",
-            data: null
+            data: null,
         });
     }
     catch (err) {
@@ -132,5 +132,5 @@ exports.ProductControllar = {
     getASingleProductDb,
     updateProductDb,
     deleteProductDb,
-    searchProductDb
+    searchProductDb,
 };

@@ -25,5 +25,5 @@ const getOrderByEmail = (email) => __awaiter(void 0, void 0, void 0, function* (
 exports.OrderService = {
     createOrder,
     getallOrder,
-    getOrderByEmail
+    getOrderByEmail,
 };

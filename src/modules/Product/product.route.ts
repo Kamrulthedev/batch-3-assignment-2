@@ -1,26 +1,21 @@
-import express from 'express';
-import { ProductControllar } from './product.controllar';
-import { validate } from '../Validation/validate';
-import { productSchema } from '../Validation/product.validation';
-
-
+import express from "express";
+import { ProductControllar } from "./product.controllar";
+import { validate } from "../Validation/validate";
+import { productSchema } from "../Validation/product.validation";
 
 const router = express.Router();
 
-router.post("/",validate(productSchema), ProductControllar.createProductDb);
+router.post("/", validate(productSchema), ProductControllar.createProductDb);
 
-router.get('/', ProductControllar.getAllProductDb);
+router.get("/", ProductControllar.getAllProductDb);
 
 // **6. Search a product**?
-router.get('/search', ProductControllar.searchProductDb);
+router.get("/search", ProductControllar.searchProductDb);
 
-router.get('/:productId', ProductControllar.getASingleProductDb);
+router.get("/:productId", ProductControllar.getASingleProductDb);
 
-router.put('/:productId', ProductControllar.updateProductDb);
+router.put("/:productId", ProductControllar.updateProductDb);
 
-router.delete('/:productId', ProductControllar.deleteProductDb);
-
-
-
+router.delete("/:productId", ProductControllar.deleteProductDb);
 
 export const ProductRouter = router;

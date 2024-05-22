@@ -9,5 +9,5 @@ exports.orderSchema = zod_1.z.object({
         .min(1, { message: "Email is required" }),
     productId: zod_1.z.string(),
     price: zod_1.z.number({ message: "Please type in the Number Price" }),
-    quantity: zod_1.z.number()
+    quantity: zod_1.z.number(),
 });

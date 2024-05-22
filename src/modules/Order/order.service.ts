@@ -18,5 +18,5 @@ const getOrderByEmail = async (email: string) => {
 export const OrderService = {
   createOrder,
   getallOrder,
-  getOrderByEmail
+  getOrderByEmail,
 };
