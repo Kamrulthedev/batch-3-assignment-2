@@ -22,4 +22,15 @@ This is an E-commerce API built with MongoDB, Node.js, Express, Mongoose, and Ty
 ### Clone the Repository
 
 ```sh
+git clone 
+cd ecommerce-api
+Install Dependencies
 
+   npm install
+
+using yarn
+     yarn install
+
+Set Up Environment Variables
+
+Create a .env file 
