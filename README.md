@@ -45,9 +45,9 @@ Using npm:  npm run dev
 Products
 Create a Product
 
-Endpoint: `/api/products`
-Method: `POST`
-Request Body: 
+1.Endpoint: `/api/products`
+. Method: `POST`
+. Request Body: 
       {
       "name": "Product Name",
           "description": "Product Description",
@@ -68,25 +68,24 @@ Request Body:
 
 
 
- Get All Products
-
- Endpoint: `/api/products`
- Method: `GET`
-
+ 2Get All Products
+ . Endpoint: `/api/products`
+ . Method: `GET`
 
 
-  Get a Single Product
-  Endpoint: `/api/products/:productId`
-  Method: `GET`
+
+3. Get a Single Product
+. Endpoint: `/api/products/:productId`
+. Method: `GET`
 
 
-    Update a Product
-    Endpoint: `/api/products/:productId`
-    Method: `PUT`
+4. Update a Product
+. Endpoint: `/api/products/:productId`
+. Method: `PUT`
 
-    Delete a Product
-    Endpoint: `/api/products/:productId`
-    Method: `DELETE`
+5. Delete a Product
+. Endpoint: `/api/products/:productId`
+. Method: `DELETE`
 
 
 
