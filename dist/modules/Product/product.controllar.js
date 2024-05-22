@@ -29,6 +29,51 @@ const createProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
 });
+const getAllProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const result = yield product_service_1.ProductService.getAllProduct();
+        res.status(200).json({
+            success: true,
+            message: "Products fetched successfully!",
+            data: result,
+        });
+    }
+    catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong while fetch the product",
+            error: err.message,
+        });
+    }
+});
+const getASingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const productId = req.params.productId;
+        const result = yield product_service_1.ProductService.getSingleProduct(productId);
+        if (result) {
+            res.status(200).json({
+                success: true,
+                message: "Product fetched successfully!",
+                data: result,
+            });
+        }
+        else {
+            res.status(404).json({
+                success: false,
+                message: "Product not found",
+            });
+        }
+    }
+    catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong while fetching the product",
+            error: err.message,
+        });
+    }
+});
 exports.ProductControllar = {
-    createProductDb
+    createProductDb,
+    getAllProductDb,
+    getASingleProduct
 };

@@ -15,6 +15,16 @@ const createProduct = (Prodectdata) => __awaiter(void 0, void 0, void 0, functio
     const result = yield product_model_1.Product.create(Prodectdata);
     return result;
 });
+const getAllProduct = () => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.find();
+    return result;
+});
+const getSingleProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.findById(id);
+    return result;
+});
 exports.ProductService = {
-    createProduct
+    createProduct,
+    getAllProduct,
+    getSingleProduct
 };

@@ -6,51 +6,51 @@ const mongoose_2 = require("mongoose");
 const variantSchema = new mongoose_1.Schema({
     type: {
         type: String,
-        required: true
+        required: true,
     },
     value: {
         type: String,
-        required: true
-    }
+        required: true,
+    },
 });
 const inventorySchema = new mongoose_1.Schema({
     quantity: {
         type: Number,
-        required: true
+        required: true,
     },
     inStock: {
         type: Boolean,
-        required: true
-    }
+        required: true,
+    },
 });
 exports.productSchema = new mongoose_1.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     description: {
         type: String,
-        required: true
+        required: true,
     },
     price: {
         type: Number,
-        required: true
+        required: true,
     },
     category: {
         type: String,
-        required: true
+        required: true,
     },
     tags: {
         type: [String],
-        required: true
+        required: true,
     },
     variants: {
         type: [variantSchema],
-        required: true
+        required: true,
     },
     inventory: {
         type: inventorySchema,
-        required: true
-    }
+        required: true,
+    },
 });
-exports.Product = (0, mongoose_2.model)('Product', exports.productSchema);
+exports.Product = (0, mongoose_2.model)("Product", exports.productSchema);
