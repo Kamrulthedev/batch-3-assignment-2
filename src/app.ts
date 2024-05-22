@@ -1,12 +1,12 @@
 import cors from "cors";
 import express, { Application, Request, Response } from 'express';
 const app: Application = express();
-const port = 5000;
 
+app.use(express.json());
+app.use(cors());
 
-
-app.listen(port, (req:Request, res:Response) => {
-    console.log(`Example app listening on port ${port}`)
+app.get('/', (req: Request, res:Response) => {
+    res.send('Hello Next!')
   });
 
   export default app;
