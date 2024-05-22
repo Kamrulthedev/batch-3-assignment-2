@@ -17,14 +17,14 @@ const createProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         const result = yield product_service_1.ProductService.createProduct(productData);
         res.status(200).json({
             success: true,
-            message: "Product created successfully!",
+            message: "Product create successfully!",
             data: result,
         });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "Something went wrong while creating the product",
+            message: "Something was wrong create product",
             error: err.message,
         });
     }
@@ -34,14 +34,14 @@ const getAllProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         const result = yield product_service_1.ProductService.getAllProduct();
         res.status(200).json({
             success: true,
-            message: "Products fetched successfully!",
+            message: "Products fetch successfully!",
             data: result,
         });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "Something went wrong while fetch the product",
+            message: "Something was wrong product",
             error: err.message,
         });
     }
@@ -50,24 +50,16 @@ const getASingleProductDb = (req, res) => __awaiter(void 0, void 0, void 0, func
     try {
         const productId = req.params.productId;
         const result = yield product_service_1.ProductService.getSingleProduct(productId);
-        if (result) {
-            res.status(200).json({
-                success: true,
-                message: "Product fetched successfully!",
-                data: result,
-            });
-        }
-        else {
-            res.status(404).json({
-                success: false,
-                message: "Product not found",
-            });
-        }
+        res.status(200).json({
+            success: true,
+            message: "Product fetcheded successfully!",
+            data: result,
+        });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "Something went wrong while fetching the product",
+            message: "something was wrong fetche product",
             error: err.message,
         });
     }
@@ -86,7 +78,7 @@ const updateProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "Something was wrong  updateproduct",
+            message: "Something was wrong product",
             error: err,
         });
     }
@@ -97,14 +89,14 @@ const deleteProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         const result = yield product_service_1.ProductService.deleteProduct(productId);
         res.status(200).json({
             success: true,
-            message: "Product delete successfully!",
-            data: result
+            message: "Product deleted successfully!",
+            data: null
         });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "Something was wrong delete product",
+            message: "Something was wrong product",
             error: err,
         });
     }
