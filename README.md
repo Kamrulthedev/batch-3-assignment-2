@@ -34,3 +34,15 @@ using yarn
 Set Up Environment Variables
 
 Create a .env file 
+ PORT=5000
+
+
+Using npm:  npm run dev
+
+
+
+## API Endpoints
+Products
+Create a Product
+
+Endpoint: /api/products
