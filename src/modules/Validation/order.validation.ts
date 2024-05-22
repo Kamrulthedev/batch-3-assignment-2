@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+
+//validated for Orders
 export const orderSchema = z.object({
   email: z
     .string()

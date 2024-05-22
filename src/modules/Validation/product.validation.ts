@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+
+//validated Product
 export const productSchema = z.object({
   name: z
     .string()
