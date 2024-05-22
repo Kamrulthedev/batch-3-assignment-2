@@ -10,6 +10,8 @@ export type EInventory = {
   inStock: boolean;
 };
 
+
+//creteing a EProduct Type
 export type EProduct = {
   name: string;
   description: string;

@@ -11,14 +11,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderService = void 0;
 const order_shema_1 = require("./order.shema");
+//create a Order
 const createOrder = (orderData) => __awaiter(void 0, void 0, void 0, function* () {
     const result = new order_shema_1.Order(orderData);
     return yield result.save();
 });
+//get all Order
 const getallOrder = () => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield order_shema_1.Order.find();
     return result;
 });
+//get Order BY Email
 const getOrderByEmail = (email) => __awaiter(void 0, void 0, void 0, function* () {
     return yield order_shema_1.Order.find({ email });
 });

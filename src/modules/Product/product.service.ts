@@ -15,6 +15,7 @@ const getAllProduct = async () => {
 
 //get a Single Product
 const getSingleProduct = async (id: string) => {
+  //get id
   const result = await Product.findById(id);
   return result;
 };

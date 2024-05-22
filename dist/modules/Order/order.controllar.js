@@ -30,29 +30,15 @@ const createOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
 });
-// //get by all Orders
-// const getallOrderDb = async (req: Request, res: Response) => {
-//   try {
-//     const result = await OrderService.getallOrder();
-//     res.status(200).json({
-//       success: true,
-//       message: "Orders fetched successfully!",
-//       data: result,
-//     });
-//   } catch (err: any) {
-//     res.status(500).json({
-//       success: false,
-//       message: "You are Worng data",
-//       error: err,
-//     });
-//   }
-// };
+//get all Order conditional and get Order By Email
 const getallOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const email = req.query.email;
+        //Get Email
         let result;
         if (email) {
             result = yield order_service_1.OrderService.getOrderByEmail(email);
+            //Not Orders found email
             if (!result.length) {
                 return res.status(404).json({
                     success: false,
@@ -77,29 +63,6 @@ const getallOrderDb = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
 });
-// const getOrderByEmailDb = async (req: Request, res: Response) => {
-//   try {
-//       const email = req.query.email as string;
-//       if (!email) {
-//           return res.status(400).json({
-//               success: false,
-//               message: "Email query parameter is required",
-//           });
-//       }
-//       const result = await OrderService.getOrderByEmail(email);
-//       res.status(200).json({
-//           success: true,
-//           message: "Orders fetched successfully!",
-//           data: result,
-//       });
-//   } catch (error: any) {
-//       res.status(500).json({
-//           success: false,
-//           message: "Something went wrong while fetching orders",
-//           error: error.message,
-//       });
-//   }
-// };
 exports.OrderControllar = {
     createOrderDb,
     getallOrderDb,

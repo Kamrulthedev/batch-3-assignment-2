@@ -62,6 +62,7 @@ const updateProductDb = async (req: Request, res: Response) => {
   try {
     const productId = req.params.productId;
     const productData = req.body;
+    //product data
     const result = await ProductService.updateProduct(productId, productData);
     res.status(200).json({
       success: true,
@@ -81,6 +82,7 @@ const updateProductDb = async (req: Request, res: Response) => {
 const deleteProductDb = async (req: Request, res: Response) => {
   try {
     const productId = req.params.productId;
+    //product Id
     const result = await ProductService.deleteProduct(productId);
     res.status(200).json({
       success: true,

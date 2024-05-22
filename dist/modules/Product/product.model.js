@@ -13,6 +13,7 @@ const variantSchema = new mongoose_1.Schema({
         required: true,
     },
 });
+//create a Schema
 const inventorySchema = new mongoose_1.Schema({
     quantity: {
         type: Number,
@@ -23,6 +24,7 @@ const inventorySchema = new mongoose_1.Schema({
         required: true,
     },
 });
+//create a Product Schema
 exports.productSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -53,4 +55,5 @@ exports.productSchema = new mongoose_1.Schema({
         required: true,
     },
 });
+//create a Model
 exports.Product = (0, mongoose_2.model)("Product", exports.productSchema);

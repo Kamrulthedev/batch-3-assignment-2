@@ -72,6 +72,7 @@ const updateProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
     try {
         const productId = req.params.productId;
         const productData = req.body;
+        //product data
         const result = yield product_service_1.ProductService.updateProduct(productId, productData);
         res.status(200).json({
             success: true,
@@ -91,6 +92,7 @@ const updateProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
 const deleteProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productId = req.params.productId;
+        //product Id
         const result = yield product_service_1.ProductService.deleteProduct(productId);
         res.status(200).json({
             success: true,

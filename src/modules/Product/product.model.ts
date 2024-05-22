@@ -13,6 +13,7 @@ const variantSchema = new Schema({
   },
 });
 
+//create a Schema
 const inventorySchema = new Schema({
   quantity: {
     type: Number,
@@ -24,6 +25,7 @@ const inventorySchema = new Schema({
   },
 });
 
+//create a Product Schema
 export const productSchema = new Schema({
   name: {
     type: String,
@@ -55,4 +57,5 @@ export const productSchema = new Schema({
   },
 });
 
+//create a Model
 export const Product = model<EProduct>("Product", productSchema);

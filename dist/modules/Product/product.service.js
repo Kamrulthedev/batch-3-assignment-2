@@ -23,6 +23,7 @@ const getAllProduct = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 //get a Single Product
 const getSingleProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    //get id
     const result = yield product_model_1.Product.findById(id);
     return result;
 });
