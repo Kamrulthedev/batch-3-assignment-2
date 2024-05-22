@@ -8,9 +8,9 @@ const express_1 = __importDefault(require("express"));
 const order_controllar_1 = require("./order.controllar");
 const router = express_1.default.Router();
 //create a order
-router.post("/orders", order_controllar_1.OrderControllar.createOrderDb);
-//getOrdersByEmail
-router.get("/orders", order_controllar_1.OrderControllar.getOrderByEmailDb);
+router.post("/", order_controllar_1.OrderControllar.createOrderDb);
 //get all order
-router.get("/orders", order_controllar_1.OrderControllar.getallOrderDb);
+router.get("/", order_controllar_1.OrderControllar.getallOrderDb);
+//getOrdersByEmail
+router.get("/", order_controllar_1.OrderControllar.getOrderByEmailDb);
 exports.OrderRouter = router;

@@ -20,6 +20,7 @@ const createOrderDb = async (req: Request, res: Response) => {
     });
   }
 };
+
 //get by all Orders
 const getallOrderDb = async (req: Request, res: Response) => {
   try {
