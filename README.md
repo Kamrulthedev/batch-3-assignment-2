@@ -45,4 +45,50 @@ Using npm:  npm run dev
 Products
 Create a Product
 
-Endpoint: /api/products
+Endpoint: `/api/products`
+Method: `POST`
+Request Body: 
+      {
+      "name": "Product Name",
+          "description": "Product Description",
+          "price": 100,
+          "category": "Category",
+          "tags": ["tag1", "tag2"],
+          "variants": [
+              {
+                  "type": "Color",
+                  "value": "Red"
+              }
+          ],
+          "inventory": {
+              "quantity": 10,
+              "inStock": true
+          }
+   }      
+
+
+
+ Get All Products
+
+ Endpoint: `/api/products`
+ Method: `GET`
+
+
+
+  Get a Single Product
+  Endpoint: `/api/products/:productId`
+  Method: `GET`
+
+
+    Update a Product
+    Endpoint: `/api/products/:productId`
+    Method: `PUT`
+
+    Delete a Product
+    Endpoint: `/api/products/:productId`
+    Method: `DELETE`
+
+
+
+
+
