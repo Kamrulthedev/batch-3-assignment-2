@@ -42,48 +42,24 @@ const getOrderByEmailDb = async(req:Request, res:Response)=>{
      if(!emailData){
   return res.status(400).json({
     success: false,
-    message: 'Email query parameter is required',
+    message: 'not found your email!!',
 });
  }
  const result = await OrderService.getOrderByEmail(emailData);
  res.status(200).json({
   success:true,
-  message:"Orders fetched successfully for user email!",
+  message:"Orders get by email in the successfully.",
   data:result
  })
   }catch(err:any){
     res.status(500).json({
       success:false,
-      message:"Orders Fetched UnSuccessfully for user Email",
+      message:"Orders Fetched UnSuccessfully",
       data:err
     })
   }
 }
 
-// const getOrdersByEmail = async (req: Request, res: Response) => {
-//   try {
-//       const email = req.query.email as string;
-//       if (!email) {
-//           return res.status(400).json({
-//               success: false,
-//               message: 'Email query parameter is required',
-//           });
-//       }
-
-//       const orders = await OrderService.getOrderByEmail(email);
-//       res.status(200).json({
-//           success: true,
-//           message: 'Orders fetched successfully!',
-//           data: orders,
-//       });
-//   } catch (error: any) {
-//       res.status(500).json({
-//           success: false,
-//           message: 'Something went wrong while fetching orders',
-//           error: error.message,
-//       });
-//   }
-// };
 
 export const OrderControllar = {
   createOrderDb,
