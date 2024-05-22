@@ -24,7 +24,7 @@ const createProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "Something was wrong create product",
+            message: "Something was wrong create",
             error: err.message,
         });
     }
@@ -34,7 +34,7 @@ const getAllProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         const result = yield product_service_1.ProductService.getAllProduct();
         res.status(200).json({
             success: true,
-            message: "Products fetch successfully!",
+            message: "ALl Products fetch successfully!",
             data: result,
         });
     }
@@ -52,14 +52,14 @@ const getASingleProductDb = (req, res) => __awaiter(void 0, void 0, void 0, func
         const result = yield product_service_1.ProductService.getSingleProduct(productId);
         res.status(200).json({
             success: true,
-            message: "Product fetcheded successfully!",
+            message: "A Product fetcheded successfully!",
             data: result,
         });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "something was wrong fetche product",
+            message: "something was wrong product",
             error: err.message,
         });
     }
@@ -71,7 +71,7 @@ const updateProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         const result = yield product_service_1.ProductService.updateProduct(productId, productData);
         res.status(200).json({
             success: true,
-            message: "Product update successfully!",
+            message: "A Product update successfully!",
             data: result,
         });
     }
@@ -89,14 +89,14 @@ const deleteProductDb = (req, res) => __awaiter(void 0, void 0, void 0, function
         const result = yield product_service_1.ProductService.deleteProduct(productId);
         res.status(200).json({
             success: true,
-            message: "Product deleted successfully!",
+            message: "A Product deleted successfully!",
             data: null
         });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "Something was wrong product",
+            message: "Something was wrong",
             error: err,
         });
     }

@@ -13,7 +13,7 @@ const createProductDb = async (req: Request, res: Response)=> {
     } catch (err: any) {
         res.status(500).json({
             success: false,
-            message: "Something was wrong create product",
+            message: "Something was wrong create",
             error: err.message,
         });
     }
@@ -23,7 +23,7 @@ const getAllProductDb = async (req:Request, res:Response)=>{
         const result = await ProductService.getAllProduct();
         res.status(200).json({
             success: true,
-            message: "Products fetch successfully!",
+            message: "ALl Products fetch successfully!",
             data: result,
         });
     } catch (err: any) {
@@ -41,13 +41,13 @@ const getASingleProductDb = async (req: Request, res: Response) => {
         const result = await ProductService.getSingleProduct(productId);
             res.status(200).json({
                 success: true,
-                message: "Product fetcheded successfully!",
+                message: "A Product fetcheded successfully!",
                 data: result,
             });
     } catch (err: any) {
         res.status(500).json({
             success: false,
-            message: "something was wrong fetche product",
+            message: "something was wrong product",
             error: err.message,
         });
     }
@@ -60,7 +60,7 @@ const updateProductDb = async (req: Request, res: Response) => {
         const result = await ProductService.updateProduct(productId, productData);
             res.status(200).json({
                 success: true,
-                message: "Product update successfully!",
+                message: "A Product update successfully!",
                 data: result,
             }); 
     } catch (err: any) {
@@ -77,13 +77,13 @@ const deleteProductDb = async (req: Request, res: Response)=> {
         const result = await ProductService.deleteProduct(productId);
             res.status(200).json({
                 success: true,
-                message:"Product deleted successfully!",
+                message:"A Product deleted successfully!",
                 data:null
             });
     } catch (err: any) {
         res.status(500).json({
             success: false,
-            message: "Something was wrong product",
+            message: "Something was wrong",
             error: err,
         });
     }

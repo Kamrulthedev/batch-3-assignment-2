@@ -3,17 +3,17 @@ import { ProductControllar } from './product.controllar';
 
 const router = express.Router();
 
-router.post('/' , ProductControllar.createProductDb);
+router.post('/products' , ProductControllar.createProductDb);
 
-router.get('/', ProductControllar.getAllProductDb);
+router.get('/products', ProductControllar.getAllProductDb);
 // **6. Search a product**?
-router.get('/search', ProductControllar.searchProductDb);
+router.get('/products/search', ProductControllar.searchProductDb);
 
-router.get('/:productId', ProductControllar.getASingleProductDb);
+router.get('/products/:productId', ProductControllar.getASingleProductDb);
 
-router.put('/:productId', ProductControllar.updateProductDb);
+router.put('/products/:productId', ProductControllar.updateProductDb);
 
-router.delete('/:productId', ProductControllar.deleteProductDb);
+router.delete('/products/:productId', ProductControllar.deleteProductDb);
 
 
 
