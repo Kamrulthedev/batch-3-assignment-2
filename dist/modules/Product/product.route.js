@@ -8,4 +8,4 @@ const express_1 = __importDefault(require("express"));
 const product_controllar_1 = require("./product.controllar");
 const router = express_1.default.Router();
 router.post('/', product_controllar_1.ProductControllar.createProductDb);
-exports.ProductRouter = {};
+exports.ProductRouter = router;
