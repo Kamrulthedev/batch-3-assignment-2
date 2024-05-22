@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const app_1 = __importDefault(require("./app"));
 const config_1 = __importDefault(require("./config"));
-main().catch(err => console.log(err));
+main().catch((err) => console.log(err));
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -25,8 +25,7 @@ function main() {
             });
         }
         catch (error) {
-            console.error('An error occurred:', error);
+            console.error("An error occurred:", error);
         }
     });
 }
-;
